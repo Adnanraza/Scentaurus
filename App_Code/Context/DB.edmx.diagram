@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c17a817615f94ba2a37ce3e98c14278c" Name="Diagram1" ZoomLevel="83">
+        <EntityTypeShape EntityType="ScentaurusModel1.Log" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ScentaurusModel1.ProductLevel" Width="1.5" PointX="3" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ScentaurusModel1.Product" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ScentaurusModel1.SalesComissionNthLevel" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ScentaurusModel1.sysdiagram" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ScentaurusModel1.UserNthLevel" Width="1.5" PointX="3" PointY="11.5" IsExpanded="true" />
+        <AssociationConnector Association="ScentaurusModel1.FK_ProductLevels_Products" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ScentaurusModel1.UserSale" Width="1.5" PointX="3" PointY="14.25" />
+        <AssociationConnector Association="ScentaurusModel1.FK_UserSales_Products" />
+        <AssociationConnector Association="ScentaurusModel1.FK_SalesComissionNthLevel_UserSales" />
+        <EntityTypeShape EntityType="ScentaurusModel1.UserPage" Width="1.5" PointX="6" PointY="12" />
+        <EntityTypeShape EntityType="ScentaurusModel1.Page" Width="1.5" PointX="8.375" PointY="0.875" />
+        <AssociationConnector Association="ScentaurusModel1.FK_UserPages_ToTable" />
+        <EntityTypeShape EntityType="ScentaurusModel1.Ledger" Width="1.5" PointX="3" PointY="19.875" />
+        <EntityTypeShape EntityType="ScentaurusModel1.CheckOutRequest" Width="1.5" PointX="3" PointY="24.125" />
+        <EntityTypeShape EntityType="ScentaurusModel1.UserDetail" Width="1.5" PointX="0.75" PointY="10.875" />
+        <AssociationConnector Association="ScentaurusModel1.FK_CheckOutRequests_ToTable" />
+        <AssociationConnector Association="ScentaurusModel1.FK_Ledger_ToTable" />
+        <AssociationConnector Association="ScentaurusModel1.FK_SalesComissionNthLevel_UserDetails" />
+        <AssociationConnector Association="ScentaurusModel1.FK_UserDetails_ToTable" />
+        <AssociationConnector Association="ScentaurusModel1.FK_UserNthLevels_UserDetails" />
+        <AssociationConnector Association="ScentaurusModel1.FK_UserPages_UserDetails" />
+        <AssociationConnector Association="ScentaurusModel1.FK_UserSales_UserDetails" />
+        <AssociationConnector Association="ScentaurusModel1.FK_UserSales_UserDetails1" />
+        <AssociationConnector Association="ScentaurusModel1.FK_UserSales_UserDetails2" />
+        <EntityTypeShape EntityType="ScentaurusModel1.UserProduct" Width="1.5" PointX="6" PointY="7.75" />
+        <AssociationConnector Association="ScentaurusModel1.FK_UserProducts_Products" />
+        <AssociationConnector Association="ScentaurusModel1.FK_UserProducts_UserDetails" />
+        <EntityTypeShape EntityType="ScentaurusModel1.Adjustment" Width="1.5" PointX="3" PointY="3.5" />
+        <AssociationConnector Association="ScentaurusModel1.FK_Adjustment_ToTable" />
+        <EntityTypeShape EntityType="ScentaurusModel1.Config" Width="1.5" PointX="8.375" PointY="4.75" />
+        <EntityTypeShape EntityType="ScentaurusModel1.UserRequest" Width="1.5" PointX="9" PointY="8.5" />
+        <AssociationConnector Association="ScentaurusModel1.FK_UserRequests_Product" />
+        <AssociationConnector Association="ScentaurusModel1.FK_UserRequests_ToTable" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

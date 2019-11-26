@@ -1,0 +1,128 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Masters/Admin.master" AutoEventWireup="true" CodeFile="StdLedger.aspx.cs" Inherits="StdLedger" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+
+    <asp:UpdatePanel ID="upMain" runat="server">
+        <ContentTemplate>
+
+            <asp:UpdateProgress ID="UpdateProgress2" runat="server">
+                <ProgressTemplate>
+                    <div id="Imgt" style="position: fixed; background: rgba(255,255,255,.5); width: 100%; z-index: 999999; height: 100%;"
+                        align="center" valign="middle" runat="server"
+                        class="blur">
+                        <asp:Image ID="imgLoading" runat="server" ImageUrl="~/Images/731.gif" Style="margin: auto; position: fixed; top: 0; right: 0; bottom: 0px; left: 0px;" /><br />
+                        <br />
+                        <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/276.gif" Style="margin: auto; position: fixed; top: 100px; right: 0; bottom: 0px; left: 0px;" /><br />
+                        <br />
+                    </div>
+                </ProgressTemplate>
+            </asp:UpdateProgress>
+
+            <div class="row">
+                <div class="col-md-12  col-xs-12">
+                    <span class="heading">Student Ledger</span>
+
+                    <asp:HiddenField ID="hdnStudentID" runat="server" />
+
+                    <div class="row">
+
+                        <div class="col-md-6  col-xs-12">
+                            <div class="profile-user-info profile-user-info-striped">
+                                <div class="profile-info-row">
+                                    <div class="profile-info-name">Name: </div>
+
+                                    <div class="profile-info-value">
+                                        <asp:Label ID="lblName" runat="server"></asp:Label>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-6  col-xs-12">
+
+                            <div class="profile-user-info profile-user-info-striped">
+                                <div class="profile-info-row">
+                                    <div class="profile-info-name">Class: </div>
+
+                                    <div class="profile-info-value">
+
+                                        <asp:Label ID="lblClass" runat="server"></asp:Label>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row table-responsive">
+
+                        <asp:GridView ID="gvwList" runat="server" Width="1000px" OnSelectedIndexChanging="gvwList_SelectedIndexChanging" OnRowDataBound="gvwList_RowDataBound" OnSelectedIndexChanged="gvwList_SelectedIndexChanged"
+                            AutoGenerateColumns="false" AllowPaging="true" PageSize="10" OnPageIndexChanging="gvwList_PageIndexChanging" OnPageIndexChanged="gvwList_PageIndexChanged">
+                            <PagerStyle HorizontalAlign="right" CssClass="paging" />
+
+                            <Columns>
+                                <asp:TemplateField HeaderText="Time stamp">
+                                    <ItemTemplate>
+                                        <asp:HiddenField ID="hdnReferenceID" runat="server" Value='<%#Eval("ReferenceID") %>' />
+                                        <asp:HiddenField ID="hdnType" runat="server" Value='<%#Eval("AdjustmentType") %>' />
+                                        <%#Eval("CreatedTimeStamp")%>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Type">
+                                    <ItemTemplate>
+                                        <%#Eval("AdjustmentType") %> - <%#Eval("Type") %>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+
+
+                                <asp:TemplateField HeaderText="Amount">
+                                    <ItemTemplate>
+
+                                        <%#Eval("Amount") %>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+
+
+                                <asp:TemplateField HeaderText="Balance">
+                                    <ItemTemplate>
+
+                                        <%#Eval("Balance") %>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+
+                                <asp:TemplateField HeaderText="Processed by">
+                                    <ItemTemplate>
+
+                                        <%#Eval("CreatedBy") %>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+
+                                <asp:TemplateField HeaderText="Description">
+                                    <ItemTemplate>
+
+                                        <asp:Label ID="lblDescription" runat="server"></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+
+
+
+
+                            </Columns>
+
+                        </asp:GridView>
+
+                        <div class="col-md-6">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </ContentTemplate>
+    </asp:UpdatePanel>
+
+
+</asp:Content>
+
+
